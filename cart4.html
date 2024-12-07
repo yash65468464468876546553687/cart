@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon Cart</title>
+  <style>
+    /* Inline CSS */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .cart-container {
+      width: 100%;
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    .cart-items {
+      margin-bottom: 20px;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .cart-item img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+    }
+
+    .cart-item-info {
+      flex-grow: 1;
+      margin-left: 15px;
+    }
+
+    .cart-item-info h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .cart-item-info p {
+      margin: 5px 0;
+      font-size: 16px;
+    }
+
+    .cart-item-price {
+      font-size: 18px;
+      font-weight: bold;
+      margin-left: 15px;
+      color: #333;
+    }
+
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #f7f7f7;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .checkout-button {
+      width: 100%;
+      padding: 12px;
+      background-color: #ff9900;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .checkout-button:hover {
+      background-color: #e68900;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cart-container">
+    <h2>Your Cart</h2>
+    
+    <div class="cart-items">
+      <!-- Cart Items -->
+      <div class="cart-item" id="item1">
+        <img src="https://via.placeholder.com/100" alt="Gaming PC">
+        <div class="cart-item-info">
+          <h3>Gaming PC</h3>
+          <p>High-performance gaming desktop with latest GPU</p>
+        </div>
+        <div class="cart-item-price">$2,500.00</div>
+      </div>
+      
+      <div class="cart-item" id="item2">
+        <img src="https://via.placeholder.com/100" alt="PS5">
+        <div class="cart-item-info">
+          <h3>PS5 Console</h3>
+          <p>PlayStation 5, next-gen gaming console</p>
+        </div>
+        <div class="cart-item-price">$499.99</div>
+      </div>
+      
+      <div class="cart-item" id="item3">
+        <img src="https://via.placeholder.com/100" alt="iPhone 15 Pro">
+        <div class="cart-item-info">
+          <h3>iPhone 15 Pro</h3>
+          <p>Apple's flagship smartphone with A17 Bionic chip</p>
+        </div>
+        <div class="cart-item-price">$1,099.00</div>
+      </div>
+
+      <div class="cart-item" id="item4">
+        <img src="https://via.placeholder.com/100" alt="Rolex Watch">
+        <div class="cart-item-info">
+          <h3>Rolex Watch</h3>
+          <p>Luxury Rolex Submariner - Stainless Steel</p>
+        </div>
+        <div class="cart-item-price">$8,500.00</div>
+      </div>
+    </div>
+
+    <div class="cart-total">
+      <span>Total:</span>
+      <span id="total-price">$12,598.99</span>
+    </div>
+
+    <button class="checkout-button" onclick="proceedToCheckout()">Proceed to Checkout</button>
+  </div>
+
+  <script>
+    // JavaScript to calculate total price
+    const items = [
+      { id: 'item1', price: 2500.00 },
+      { id: 'item2', price: 499.99 },
+      { id: 'item3', price: 1099.00 },
+      { id: 'item4', price: 8500.00 }
+    ];
+
+    // Function to calculate and update total price
+    function calculateTotal() {
+      let total = 0;
+      items.forEach(item => {
+        total += item.price;
+      });
+      document.getElementById("total-price").innerText = `$${total.toFixed(2)}`;
+    }
+
+    // Function to simulate checkout process
+    function proceedToCheckout() {
+      alert("Proceeding to Checkout...");
+      // You can redirect to the checkout page here
+    }
+
+    // Calculate total price when the page loads
+    calculateTotal();
+  </script>
+
+</body>
+</html>
